@@ -38,10 +38,10 @@
             {% csrf_token %}
             <div class="app-form">
               <div class="col-md-6 col-sm-6">
-                <input class="form-control" placeholder="Full Name *" type="text" name="name">
+                <input class="form-control" placeholder="Full Name *" type="text" name="name" required>
               </div>
               <div class="col-md-6 col-sm-6">
-                <input class="form-control" placeholder="Your Phone *" type="text" name="phone">
+                <input class="form-control" placeholder="Your Phone *" type="number" name="phone">
               </div>
               <div class="col-md-6 col-sm-6">
                 <input class="form-control" placeholder="Your Email *" type="text" name="email">
@@ -63,7 +63,8 @@
                 <select name="time">
                   <option disabled>--Time--</option>
                   <option value="morning">Morning</option>
-                  <option value="morning">Evening</option>
+                  <option value="afternoon">Afternoon</option>
+                  <option value="evening">Evening</option>
                 </select>
               </div>
               <div class="col-md-12 text-center">

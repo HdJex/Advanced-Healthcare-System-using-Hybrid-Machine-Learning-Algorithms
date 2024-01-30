@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Slider(models.Model):
@@ -61,8 +62,7 @@ class Faq(models.Model):
 
     def __str__(self):
         return self.question
-
-
+    
 class Gallery(models.Model):
     title = models.CharField(max_length=120)
     image = models.ImageField(upload_to="gallery/")
@@ -72,3 +72,27 @@ class Gallery(models.Model):
 
     class Meta:
         verbose_name_plural = "Galleries"
+
+class Product(models.Model):
+
+    name=models.CharField(max_length=255)
+    price=models.FloatField()
+    stock=models.IntegerField()
+    image_url=models.CharField(max_length=2083)
+
+
+class Offer(models.Model):
+    code=models.CharField(max_length=10)
+    description=models.CharField(max_length=2083)
+    discount=models.FloatField()
+
+class Registration(models.Model):
+    username = models.CharField(max_length=120)
+    email = models.CharField(max_length=120)
+    password = models.CharField(max_length=120)
+    confirmPassword = models.CharField(max_length=120)
+
+class login1(models.Model):
+    email=models.CharField(max_length=120)
+    password = models.CharField(max_length=120)
+    
